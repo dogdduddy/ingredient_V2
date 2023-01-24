@@ -7,7 +7,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.viewModels
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val ingredientViewModel: IngredientViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         ingredientViewModel.ingredient.observe(this) {
             testText.text = it.name
         }
-        ingredientViewModel.getIngredient()
+        CoroutineScope(Dispatchers.Main).launch {
+            ingredientViewModel.getIngredient()
+        }
 
         val testEdit = findViewById<EditText>(R.id.editText)
         val testBtn = findViewById<Button>(R.id.button)

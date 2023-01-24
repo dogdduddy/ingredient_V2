@@ -4,26 +4,26 @@ import com.dogdduddy.domain.Ingredient
 
 
 data class IngredientDataModel(
-    val category: String,
-    val icon: String,
-    val idx: Int,
-    val name: String
+    val ingredientcategory: String = "",
+    val ingredienticon: String = "",
+    val ingredientidx: Int = 0,
+    val ingredientname: String = ""
 )
 
 fun IngredientDataModel.toIngredient() =
     com.dogdduddy.domain.Ingredient(
-        category = this.category,
-        icon = this.icon,
-        idx = this.idx,
-        name = this.name
+        category = this.ingredientcategory,
+        icon = this.ingredienticon,
+        idx = this.ingredientidx,
+        name = this.ingredientname
     )
 
 fun Ingredient.toIngredientDataModel() =
     IngredientDataModel(
-        category = this.category,
-        icon = this.icon,
-        idx = this.idx,
-        name = this.name
+        ingredientcategory = this.category,
+        ingredienticon = this.icon,
+        ingredientidx = this.idx,
+        ingredientname = this.name
     )
 
 

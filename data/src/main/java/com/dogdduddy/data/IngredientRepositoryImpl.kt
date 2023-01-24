@@ -8,11 +8,11 @@ import javax.inject.Inject
 class IngredientRepositoryImpl @Inject constructor(
     private val ingredientDataSourceImpl: IngredientDataSourceImpl
 ) : IngredientRepository {
-    override fun getIngredient(): Flow<Ingredient> {
+    override suspend fun getIngredient(): Flow<Ingredient> {
         return ingredientDataSourceImpl.getIngredient()
     }
 
-    override fun updateIngredient(ingredient: com.dogdduddy.domain.Ingredient) {
-        ingredientDataSourceImpl.updateIngredient(ingredient)
+    override fun updateIngredient(ingredient: com.dogdduddy.domain.Ingredient, name: String) {
+        ingredientDataSourceImpl.updateIngredient(ingredient, name)
     }
 }

@@ -8,11 +8,12 @@ class UpdateIngredientUseCase @Inject constructor(
     fun updateIngredient(ingredient: Ingredient, name: String) {
         ingredientRepository.updateIngredient(
             Ingredient(
-                ingredient.category,
-                ingredient.icon,
-                ingredient.idx,
-                name
-            )
+                category = ingredient.category,
+                icon = ingredient.icon,
+                idx = ingredient.idx,
+                name = name
+            ),
+            ingredient.name
         )
     }
 }

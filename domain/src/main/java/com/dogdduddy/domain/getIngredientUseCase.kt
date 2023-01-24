@@ -5,5 +5,5 @@ import javax.inject.Inject
 class getIngredientUseCase  @Inject constructor(
     private val ingredientRepository: IngredientRepository
 ) {
-    fun getIngredient() = ingredientRepository.getIngredient()
+    suspend fun getIngredient() = ingredientRepository.getIngredient()
 }

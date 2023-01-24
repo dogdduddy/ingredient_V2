@@ -16,13 +16,21 @@ class IngredientViewModel @Inject constructor(
     private val updateIngredientUseCase: UpdateIngredientUseCase,
     private val getIngredientUseCase: getIngredientUseCase
 ): ViewModel() {
-    private val _ingredient = MutableLiveData<IngredientUIModel>()
+    private val _ingredient = MutableLiveData<IngredientUIModel>(
+        IngredientUIModel(
+            category = "",
+            name = "",
+            idx = 0,
+            icon = ""
+        )
+    )
     val ingredient: LiveData<IngredientUIModel> = _ingredient
 
 
-    fun updateIngredient(name: String) = updateIngredientUseCase.updateIngredient(ingredient.value!!.toIngredient(), name)
+    fun updateIngredient(name: String) =
+        updateIngredientUseCase.updateIngredient(ingredient.value!!.toIngredient(), name)
 
-    fun getIngredient() {
+    suspend fun getIngredient() {
         viewModelScope.launch {
             getIngredientUseCase.getIngredient().collect() {
                 _ingredient.value = it.toIngredientUIModel()
