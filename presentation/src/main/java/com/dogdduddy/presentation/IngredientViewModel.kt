@@ -16,14 +16,7 @@ class IngredientViewModel @Inject constructor(
     private val updateIngredientUseCase: UpdateIngredientUseCase,
     private val getIngredientUseCase: getIngredientUseCase
 ): ViewModel() {
-    private val _ingredient = MutableLiveData<IngredientUIModel>(
-        IngredientUIModel(
-            category = "",
-            name = "",
-            idx = 0,
-            icon = ""
-        )
-    )
+    private val _ingredient = MutableLiveData<IngredientUIModel>()
     val ingredient: LiveData<IngredientUIModel> = _ingredient
 
 
