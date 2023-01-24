@@ -6,6 +6,9 @@ plugins {
     id 'kotlin-kapt'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'com.dogdduddy.ingredient'
     compileSdk 33
@@ -19,7 +22,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    /*
+
     buildTypes {
         debug {
             resValue("string", "my_web_client_id", properties['WebClientID'])
@@ -33,7 +36,6 @@ android {
         }
     }
 
-     */
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -59,7 +61,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
     //FaceBook
-    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
     implementation 'com.facebook.android:facebook-login:12.0.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
