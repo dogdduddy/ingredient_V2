@@ -4,7 +4,9 @@ import android.app.Application
 import android.content.Context
 import com.facebook.FacebookSdk
 import com.facebook.appevents.AppEventsLogger
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class App: Application() {
     companion object {
         var instance: App? = null
