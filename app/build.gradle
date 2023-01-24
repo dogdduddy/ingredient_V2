@@ -1,9 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -19,13 +19,21 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    /*
     buildTypes {
+        debug {
+            resValue("string", "my_web_client_id", properties['WebClientID'])
+            resValue("string", "facebook_app_id", properties['FaceBookAppID'])
+            resValue("string", "fb_login_protocol_scheme", properties['FaceBookSchema'])
+            resValue("string", "facebook_client_token", properties['FacebookClientToken'])
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+     */
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -40,6 +48,7 @@ dependencies {
     implementation project(':domain')
     implementation project(':data')
     implementation project(':presentation')
+    implementation project(':signin')
 
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
@@ -48,6 +57,10 @@ dependencies {
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    //FaceBook
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    implementation 'com.facebook.android:facebook-login:12.0.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.0'

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ingredient</string>
+
+    <string name="facebook_app_id">746940583661752</string>
+    <string name="facebook_client_token">d017953175f083a50283df68ff153ef6</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+
 </resources>
