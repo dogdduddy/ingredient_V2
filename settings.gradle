@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ingredient"
-include ':app'
+include ':app', ':domain', ':data', ':presentation'
