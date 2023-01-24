@@ -16,7 +16,6 @@ class App: Application() {
         appContext = this
         instance = this
 
-        FacebookSdk.sdkInitialize(getApplicationContext())
         AppEventsLogger.activateApp(this)
 
     }
