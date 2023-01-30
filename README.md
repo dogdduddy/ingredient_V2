@@ -52,7 +52,7 @@
 
 
 ## Document
-- [\[노션\] V2 개발 일지 정리](https://www.notion.so/dogdduddy/02b6b08163a145a5a18e196f3916d5b2?v=539d2e433bbd40d18046be92310a2ea6)
+- [\[노션\] V2 개발 일지 정리](https://www.notion.so/dogdduddy/c5e48e6888914a4888c261969e3cffeb?v=9c4ea13d35aa49e89403517a49728b4a)
 - [\[노션\] 개인 공부&취미](https://www.notion.so/dogdduddy/3d47c0b785ca454d94e7cba8a6589632)
 
 
