@@ -13,7 +13,7 @@ class IngredientDataSourceImpl @Inject constructor(
 ): IngredientDataSource {
     override suspend fun getIngredient(): Flow<com.dogdduddy.domain.Ingredient> = callbackFlow {
         val registration = db.collection("Test")
-            .whereEqualTo("ingredientidx", 0)
+            .whereEqualTo("ingredientidx", 1)
             .addSnapshotListener { snapshot, _ ->
                 kotlin.runCatching { snapshot?.toObjects(IngredientDataModel::class.java) }
                     .onSuccess { trySend(it!!.get(0)!!.toIngredient()) }
@@ -23,7 +23,7 @@ class IngredientDataSourceImpl @Inject constructor(
     }
     override fun updateIngredient(ingredient: Ingredient, name: String) {
         db.collection("Test")
-            .whereEqualTo("ingredientidx", 0)
+            .whereEqualTo("ingredientidx", 1)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
