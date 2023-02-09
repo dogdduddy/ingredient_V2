@@ -28,7 +28,8 @@ class IngredientViewModel2 @Inject constructor(
     suspend fun getIngredient() {
         viewModelScope.launch {
             getIngredientUseCase.getIngredient().collect() {
-                _ingredient.value = it.toIngredientUIModel()
+                _ingredient.emit(it.toIngredientUIModel())
+                //_ingredient.value = it.toIngredientUIModel()
             }
         }
 
