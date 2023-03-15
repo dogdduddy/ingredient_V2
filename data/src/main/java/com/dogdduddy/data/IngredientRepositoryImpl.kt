@@ -1,5 +1,6 @@
 package com.dogdduddy.data
 
+import android.util.Log
 import com.dogdduddy.domain.Ingredient
 import com.dogdduddy.domain.IngredientRepository
 import kotlinx.coroutines.flow.Flow

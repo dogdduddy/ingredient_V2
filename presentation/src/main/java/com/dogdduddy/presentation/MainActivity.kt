@@ -40,5 +40,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
+
+
+        /*
+        val testBtn2 = findViewById<Button>(R.id.button2)
+        testBtn2.setOnClickListener {
+            ingredientViewModel.testClick()
+        }
+
+         */
     }
 }
